@@ -9,6 +9,9 @@
  <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.0.13/css/all.css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="css/bootstrap/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   <style>
@@ -31,7 +34,7 @@
 				transition: opacity 0;
 			}
   .header{
-    height: 59px;
+    height: 79px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -89,11 +92,11 @@
   display: none;
   border: 1px solid #ccc;
   margin:30px;
-       width: 300px;
+       width: 379px;
 	   padding:30px;
 
 }
-.form-control{
+.form-control-payment{
 height:34px;
 border:none;
 border-bottom:1px solid #ccc;
@@ -104,7 +107,7 @@ fot-size:15px;
 .form-control-input{
 padding-right:10px;
 }
-.form-control.form-control-input {
+.form-control-payment.form-control-input {
     width: 55px;
     margin-right: 10px;
 }
@@ -138,7 +141,7 @@ border: none;
     padding: 10px 16px;
     background-color: #d22630;
     border-radius: 4px;
-    margin-top: 24px;
+    margin-top: 12px;
 }
 .fa.fa-credit-card.cvv{
     left: 81%;
@@ -180,6 +183,53 @@ border: none;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+/* modal styles */
+
+ .modal-body input{
+		width: 30px;
+		height: 50px;
+		background-color: lighten($BaseBG, 5%);
+		border: none;
+		line-height: 50px;
+		text-align: center;
+		font-size: 24px;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 200;
+		color: #000000;
+		margin: 0 2px;
+        border-bottom:1px solid #ccc;
+	}
+   
+    
+    .modal-header{
+    padding: 15px 36%;
+        border: none;
+    }
+    .modal-header .close{
+    display:none;
+    }
+    .modal-body{
+    margin-left:auto;
+    margin-right:auto;
+        padding: 15px 37%;
+            border: none;
+    }
+    .modal-footer{
+    border:none;
+    }
+
+	.splitter {
+		padding: 0 5px;
+		color: white;
+		font-size: 24px;
+	}
+
+
+.prompt {
+	margin-bottom: 20px;
+	font-size: 20px;
+	color: white;
+}
   </style>
  </head> 
  <body>
@@ -187,7 +237,7 @@ border: none;
 	<div class="loader"></div>
  </div>
  <div class="loading "></div>
-	<div class="container">
+	<div class="container_payment">
 		<div class="header">
 			<div class="header-logo"><img src="BoubyanBank.svg" width="300" height="59"/></div>
 			<div class="profile-icon" style="width:174px;" ><img src="paymentprofile.png" width="39" height="33"/></div>
@@ -212,16 +262,17 @@ border: none;
          </div>
 
 		<div id="Paris" class="tabcontent" style="display:block;">
-					   <div><input type="name" class="form-control" placeholder="Card Number" /></div>
+					   <div><input type="name" class="form-control-payment" placeholder="Card Number" /></div>
 		   <div style="display:flex">
-			   <div><input type="name" class="form-control form-control-input" placeholder="Exp MM " /></div><div style="padding-top: 3px;margin: 0 13px 0 0px;line-height: 34px;font-size: 27px;">/</div>
-			   <div><input type="name" class="form-control form-control-input" placeholder="YY " /></div>
-			   <div><input type="name" class="form-control form-control-input" placeholder="CVV Number" style="width:120px; margin-right:0;" /><i class="fa fa-credit-card cvv"></i></div>
+			   <div><input type="name" class="form-control-payment form-control-input" placeholder="Exp MM " /></div><div style="padding-top: 3px;margin: 0 13px 0 0px;line-height: 34px;font-size: 27px;">/</div>
+			   <div><input type="name" class="form-control-payment form-control-input" placeholder="YY " /></div>
+			   <div><input type="name" class="form-control-payment form-control-input" placeholder="CVV Number" style="width:169px; margin-right:0;" /><i class="fa fa-credit-card cvv"></i></div>
 		   </div>
 		   <div>
-			   <input type="name" class="form-control" placeholder="Name on Card" /></div>
+			   <input type="name" class="form-control-payment" placeholder="Name on Card" /></div>
 			   <div style="color: #968f8f;font-size: 14px;"> This card will be secured safely for faster payment experience.cvv number will not be saved.</div>
-		   <button style="float:right;" class="button">Make Payment</button>
+		   
+		    <button type="button" class="button" data-toggle="modal" data-target="#myModal">Make Payment</button>
 		</div>
 
 		<div id="Tokyo" class="tabcontent">
@@ -236,6 +287,35 @@ border: none;
 	<div class="footer">
 			@Copyright2021. Boubyan Bank.All Rights Reserved
 		</div>
+		
+		  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Enter Your OTP</h4>
+        </div>
+        <div class="modal-body">
+         <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+	<input type="text" id="digit-1" name="digit-1" data-next="digit-2" />
+	<input type="text" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" />
+	<input type="text" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" />
+	
+	<input type="text" id="digit-4" name="digit-4" data-next="digit-5" data-previous="digit-3" />
+	
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default submit" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
     <script>
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
@@ -250,7 +330,7 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-jQuery('button.button').on('click' , function() {
+jQuery('button.submit').on('click' , function() {
 
 $('.loader-container').show();
 
@@ -260,7 +340,11 @@ setTimeout(function(){
 
 
 });
+
+
 </script>
    
  </body>
  </html>
+ 
+ 
