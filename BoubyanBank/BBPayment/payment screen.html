@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Welcome to Boubyan Bank</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="assets/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet">
+ <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.0.13/css/all.css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="css/bootstrap/js/bootstrap.min.js"></script>
+  
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <style>
+  body{
+  background-color:#FAFAFA;
+  margin:0;
+  position:relative;
+  }
+  	body {
+				-webkit-transition: background-color 1s;
+				transition: background-color 1s;
+			}
+			html, body { min-height: 100%; }
+			body .loading {
+				background: #333 url('http://code.jquery.com/mobile/1.3.1/images/ajax-loader.gif') no-repeat 50% 50%;
+				-webkit-transition: background-color 0;
+				transition: background-color 0;
+				opacity: 0;
+				-webkit-transition: opacity 0;
+				transition: opacity 0;
+			}
+  .header{
+    height: 59px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+	background-color:#fff;
+	border
+	}
+	.profile-icon{
+	align-self:center;
+	    width: 120px;
+	}
+	.main-content{
+	width: 900px;
+    height: 350px;
+    border:1px solid #ccc;
+    background:#fff;
+    margin: 30px auto;
+    display:flex;
+	}
+	.payment-modes{
+	padding:20px;
+    display:block;
+	}
+    .tab {
+  overflow: hidden;
+  
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab .payment-modes {
+  background-color: inherit;
+ 
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+
+
+/* Create an active/current tablink class */
+.tab .payment-modes.active {
+ background-color: #fff;
+  border-left:3px solid red;
+   font-weight:600;
+   
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  border: 1px solid #ccc;
+  margin:30px;
+       width: 300px;
+	   padding:30px;
+
+}
+.form-control{
+height:34px;
+border:none;
+border-bottom:1px solid #ccc;
+width:100%;
+margin-bottom:10px;
+fot-size:15px;
+}
+.form-control-input{
+padding-right:10px;
+}
+.form-control.form-control-input {
+    width: 55px;
+    margin-right: 10px;
+}
+input{
+outline:none;
+}
+.footer{
+height: 60px;
+    position: fixed;
+    bottom: 0;
+    background: #54585A;
+   color:#fff;
+   
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.amount{
+height:50px;
+border-radius:5px;
+display:flex;
+ margin: 30px auto;
+ width: 900px;
+ background-color:#fff;
+}
+.button{
+border: none;
+    float: right;
+    color: #fff;
+    padding: 10px 16px;
+    background-color: #d22630;
+    border-radius: 4px;
+    margin-top: 24px;
+}
+.fa.fa-credit-card.cvv{
+    left: 81%;
+    position: relative;
+    bottom: 36px;
+	}
+	.tablinks i{
+	padding-right:10px;
+	}
+	.tablinks.active i{
+	color:#d22630;
+	}
+	.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #d22630;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+ 
+}
+.loader-container{
+ 
+      position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	display:none;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+  </style>
+ </head> 
+ <body>
+ <div class="loader-container">
+	<div class="loader"></div>
+ </div>
+ <div class="loading "></div>
+	<div class="container">
+		<div class="header">
+			<div class="header-logo"><img src="BoubyanBank.svg" width="300" height="59"/></div>
+			<div class="profile-icon" style="width:174px;" ><img src="paymentprofile.png" width="39" height="33"/></div>
+		</div>
+		<div class="amount">
+			<div style="width:120px; text-align:left; margin-left:auto;padding-top: 16px;"> Amount To Pay </div>
+			<div style="width:auto; text-align:right;margin-right:70px;padding-top: 16px;"> 684 </div>
+		</div>
+		<div class="main-content">
+			<div style="width:300px" class="tab">
+				<div class="payment-modes tablinks"  onclick="openCity(event, 'London')">
+					<img src="UPI (2).png" width="24" height="25" style="position: relative;top: 8px;" /> UPI</div>
+				<div class="payment-modes tablinks active"  onclick="openCity(event, 'Paris')">
+					<i class="fa fa-credit-card" aria-hidden="true"></i>Credit / Debit card</div>
+				<div class="payment-modes tablinks"  onclick="openCity(event, 'Tokyo')">
+					<i class="far fa-wallet"></i> Wallet</div>
+				<div class="payment-modes tablinks"  onclick="openCity(event, 'head')">
+					<i class="fa fa-university" aria-hidden="true"></i> Netbanking</div>
+			</div>
+         <div id="London" class="tabcontent">
+			  
+         </div>
+
+		<div id="Paris" class="tabcontent" style="display:block;">
+					   <div><input type="name" class="form-control" placeholder="Card Number" /></div>
+		   <div style="display:flex">
+			   <div><input type="name" class="form-control form-control-input" placeholder="Exp MM " /></div><div style="padding-top: 3px;margin: 0 13px 0 0px;line-height: 34px;font-size: 27px;">/</div>
+			   <div><input type="name" class="form-control form-control-input" placeholder="YY " /></div>
+			   <div><input type="name" class="form-control form-control-input" placeholder="CVV Number" style="width:120px; margin-right:0;" /><i class="fa fa-credit-card cvv"></i></div>
+		   </div>
+		   <div>
+			   <input type="name" class="form-control" placeholder="Name on Card" /></div>
+			   <div style="color: #968f8f;font-size: 14px;"> This card will be secured safely for faster payment experience.cvv number will not be saved.</div>
+		   <button style="float:right;" class="button">Make Payment</button>
+		</div>
+
+		<div id="Tokyo" class="tabcontent">
+		 
+		</div>
+		<div id="head" class="tabcontent">
+		  
+			</div>
+		
+		
+	</div>
+	<div class="footer">
+			@Copyright2021. Boubyan Bank.All Rights Reserved
+		</div>
+    <script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+jQuery('button.button').on('click' , function() {
+
+$('.loader-container').show();
+
+setTimeout(function(){ 
+  window.location.href = 'SuccessPayment.html';
+    return false; }, 2000);
+
+
+});
+</script>
+   
+ </body>
+ </html>
